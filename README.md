@@ -15,4 +15,13 @@ https://clusterlabs.org/pacemaker/doc/deprecated/en-US/Pacemaker/2.0/html-single
 qdevice는 sbd와 전혀 상관이 없다    
 crmd 중에 master가 존재하는데, 그것을 DC(degignated Controller)하고, 장애 시 새로운 master를 선출할때 쿼럼 투표를 하기 위한것니다. 
 
-https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/s1-quorumdev-haar
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/s1-quorumdev-haar   
+
+* 쿼럼 서버에서 상태 확인   
+[root@qdevice:~]# pcs qdevice status net --full   
+
+
+* cluster node에서 바라보고 있는 쿼럼서버 확인   
+[root@node1:~]# pcs quorum config   
+
+[root@node1:~]# pcs quorum status
